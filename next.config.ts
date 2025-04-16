@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [
       "avatars.githubusercontent.com",
@@ -12,7 +11,14 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    serverComponentsExternalPackages: [],
+    serverActions: {
+      bodySizeLimit: '2mb',
+      allowedOrigins: ['localhost:3000'],
+    },
+  },
+  transpilePackages: ["framer-motion"],
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 

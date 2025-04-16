@@ -1,11 +1,6 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  ArrowTopRightOnSquareIcon,
-  EnvelopeIcon 
-} from '@heroicons/react/24/outline';
 
 export default function Footer() {
   const scrollToSection = (sectionId: string, e: React.MouseEvent) => {

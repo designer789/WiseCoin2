@@ -1,9 +1,4 @@
 import {
-  CpuChipIcon,
-  PresentationChartLineIcon,
-  ArrowPathIcon,
-  LockClosedIcon,
-  UserCircleIcon,
   CheckIcon,
   XMarkIcon,
   ChartBarIcon,
