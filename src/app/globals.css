@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply uppercase tracking-wider font-bold;
+  }
+}
+
+body {
+  @apply bg-background text-white min-h-screen;
+}
+
+::selection {
+  @apply bg-primary text-background;
+}
+
+/* Custom Components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center relative;
+    @apply h-12 px-6 py-3 gap-3;
+    @apply text-base font-medium;
+    @apply rounded-xl border;
+    @apply transition-all duration-200;
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 3px 3px rgba(0, 0, 0, 0.5),
+      0 7px 4px rgba(0, 0, 0, 0.25),
+      0 12px 5px rgba(0, 0, 0, 0.15),
+      0 19px 5px rgba(0, 0, 0, 0.02),
+      0 0 0 2px #1a1a1a,
+      0 4px 2px -0.5px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 3px 3px rgba(0, 0, 0, 0.5),
+      0 5px 4px rgba(0, 0, 0, 0.25),
+      0 8px 5px rgba(0, 0, 0, 0.15),
+      0 14px 5px rgba(0, 0, 0, 0.02),
+      0 0 0 2px #1a1a1a,
+      0 4px 2px -0.5px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn:active {
+    @apply transform translate-y-0.5;
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 2px 2px rgba(0, 0, 0, 0.5),
+      0 3px 3px rgba(0, 0, 0, 0.25),
+      0 4px 4px rgba(0, 0, 0, 0.15),
+      0 5px 5px rgba(0, 0, 0, 0.02),
+      0 0 0 2px #1a1a1a,
+      inset 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary {
+    @apply bg-white text-gray-900 border-gray-200;
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 3px 3px rgba(0, 0, 0, 0.5),
+      0 7px 4px rgba(0, 0, 0, 0.25),
+      0 12px 5px rgba(0, 0, 0, 0.15),
+      0 19px 5px rgba(0, 0, 0, 0.02),
+      0 0 0 2px #1a1a1a,
+      0 4px 2px -0.5px rgba(0, 0, 0, 0.5),
+      inset 0 7px 8px -1px rgba(255, 255, 255, 0.683),
+      inset 0 4px 4px -0.5px rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-secondary {
+    @apply bg-[#121214] text-gray-200 border-gray-800;
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.75),
+      0 3px 3px rgba(0, 0, 0, 0.5),
+      0 7px 4px rgba(0, 0, 0, 0.25),
+      0 12px 5px rgba(0, 0, 0, 0.15),
+      0 19px 5px rgba(0, 0, 0, 0.02),
+      0 0 0 2px #1a1a1a,
+      0 4px 2px -0.5px rgba(0, 0, 0, 0.5),
+      inset 0 7px 8px -1px rgba(255, 255, 255, 0.05),
+      inset 0 4px 4px -0.5px rgba(255, 255, 255, 0.02);
+  }
+
+  .nav-link {
+    @apply rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-primary;
+  }
+
+  .footer-link {
+    @apply text-sm text-gray-400 transition-colors hover:text-primary;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl -tracking-[0.025em] uppercase;
+  }
+
+  .card {
+    @apply rounded-xl bg-background-light p-6 border border-gray-800 transition-colors hover:border-primary/50;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/5;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-lg hover:shadow-primary/20 transition-shadow;
+  }
+
+  .grid-pattern {
+    @apply relative before:absolute before:inset-0 before:bg-[linear-gradient(to_right,theme(colors.primary/10)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary/10)_1px,transparent_1px)] before:bg-[size:24px_24px];
+  }
+
+  /* Custom utility class to hide scrollbars while allowing scrolling */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-dark rounded-sm hover:bg-primary;
+}
