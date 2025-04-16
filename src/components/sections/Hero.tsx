@@ -54,9 +54,9 @@ export default function Hero() {
             <button className="btn btn-primary">
               Get Started
             </button>
-            <button className="btn btn-secondary">
+            <a href="https://wisecoin.gitbook.io/docs" target="_blank" rel="noopener"><button className="btn btn-secondary">
               Gitbook
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
