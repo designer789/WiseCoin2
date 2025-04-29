@@ -51,12 +51,22 @@ export default function Hero() {
             Smarter Investing Powered by WiseAI
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="btn btn-primary">
+            <a 
+              href="https://www.dextools.io/app/en/ether/pair-explorer/0x8c0849d66ecb8d60a003bdb241ea7b1d7c174b3e?t=1745921649282" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
               Get Started
-            </button>
-            <button className="btn btn-secondary">
+            </a>
+            <a 
+              href="https://wisecoin.gitbook.io/docs" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+            >
               Gitbook
-            </button>
+            </a>
           </div>
         </div>
       </div>
